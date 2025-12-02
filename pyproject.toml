@@ -55,10 +55,10 @@ no_warn_return_any = true
 allow_untyped_defs = true
 
 [tool.commitizen]
-version = "0.0.1"
+version = "0.1.0"
 version_files = [
     "pyproject.toml:version"
 ]
 changelog_file = "CHANGELOG.md"
-tag_format = "aoc25@v$major.$minor.$patch$prerelease"
+tag_format = "v$major.$minor.$patch$prerelease"
 update_changelog_on_bump = true
