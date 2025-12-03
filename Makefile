@@ -105,6 +105,30 @@ test: ## Run pytest on specific day package
 	uv run --package day-$(DAY) pytest aoc/day_$(DAY)/tests
 	@echo "✅ Day $(DAY) tests complete!"
 
+# Version management
+.PHONY: bump
+bump: ## Bump version, update changelog, and create git tag (BUMP=PATCH|MINOR|MAJOR)
+	@echo "🔨 Building release with commitizen..."
+	@if [ -n "$(BUMP)" ]; then \
+		echo "Bumping version: $(BUMP)"; \
+		uv run cz bump --increment $(BUMP); \
+	else \
+		echo "Auto-detecting version bump from commits..."; \
+		uv run cz bump; \
+	fi
+	@echo "✅ Build complete!"
+
+.PHONY: bump-dry
+bump-dry: ## Dry run of version bump (BUMP=PATCH|MINOR|MAJOR)
+	@echo "🔍 Dry run of version bump..."
+	@if [ -n "$(BUMP)" ]; then \
+		echo "Bumping version: $(BUMP)"; \
+		uv run cz bump --increment $(BUMP) --dry-run; \
+	else \
+		echo "Auto-detecting version bump from commits..."; \
+		uv run cz bump --dry-run; \
+	fi
+
 # Cleanup
 .PHONY: clean
 clean: ## Remove cache files and build artifacts

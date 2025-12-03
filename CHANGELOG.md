@@ -1,3 +1,9 @@
+## v0.3.0 (2025-12-03)
+
+### Feat
+
+- **day_03**: Implement puzzle 1 and 2 solvers
+
 ## v0.2.0 (2025-12-02)
 
 ### Feat
