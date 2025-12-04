@@ -1,3 +1,9 @@
+## v0.4.0 (2025-12-05)
+
+### Feat
+
+- **day_04**: Implement solution for Advent of Code 2025 Day 4
+
 ## v0.3.0 (2025-12-03)
 
 ### Feat
