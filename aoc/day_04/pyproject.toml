@@ -1,29 +1,27 @@
 [project]
-name = "day-03"
+name = "day-04"
 version = "0.1.0"
-description = "Day 3 - Lobby"
+description = "Day 4 - Printing department"
 readme = "README.md"
 authors = [
     { name = "gmurro", email = "g.murro23@gmail.com" }
 ]
 requires-python = ">=3.11,<4.0"
-dependencies = [
-    "numpy~=2.3.5",
-]
+dependencies = []
 
 [tool.uv]
 python-preference = "only-system"
 default-groups = ["dev"]
 
 [project.scripts]
-day-03 = "day_03.puzzle_1.solver:main"
+day-03 = "day_04.puzzle_1.solver:main"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/day_03"]
+packages = ["src/day_04"]
 
 [dependency-groups]
 dev = [
@@ -48,7 +46,7 @@ allow_untyped_defs = true
 
 
 [[tool.mypy.overrides]]
-module = "day_03.*"
+module = "day_04.*"
 follow_untyped_imports = true
 ignore_missing_imports = false
 
