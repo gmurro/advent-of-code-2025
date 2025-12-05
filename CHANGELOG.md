@@ -1,3 +1,9 @@
+## v0.5.0 (2025-12-06)
+
+### Feat
+
+- **day_05**: Add solver for Advent of Code 2025 Day 5 puzzles
+
 ## v0.4.0 (2025-12-05)
 
 ### Feat
