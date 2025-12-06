@@ -105,6 +105,52 @@ test: ## Run pytest on specific day package
 	uv run --package day-$(DAY) pytest aoc/day_$(DAY)/tests
 	@echo "✅ Day $(DAY) tests complete!"
 
+.PHONY: run
+run: ## Run a specific puzzle (Usage: make run DAY=XX PUZZLE=Y)
+	@if [ -z "$(DAY)" ]; then \
+		echo "❌ Error: DAY parameter is required"; \
+		echo "Usage: make run DAY=XX PUZZLE=Y"; \
+		exit 1; \
+	fi
+	@if [ -z "$(PUZZLE)" ]; then \
+		echo "❌ Error: PUZZLE parameter is required"; \
+		echo "Usage: make run DAY=XX PUZZLE=Y"; \
+		exit 1; \
+	fi
+	@if [ ! -d "aoc/day_$(DAY)" ]; then \
+		echo "❌ Error: Directory aoc/day_$(DAY) does not exist"; \
+		exit 1; \
+	fi
+	@if [ ! -f "aoc/day_$(DAY)/src/day_$(DAY)/puzzle_$(PUZZLE)/solver.py" ]; then \
+		echo "❌ Error: Puzzle $(PUZZLE) solver not found for day $(DAY)"; \
+		exit 1; \
+	fi
+	@echo "🎄 Running Day $(DAY) - Puzzle $(PUZZLE)..."
+	@uv run python aoc/day_$(DAY)/src/day_$(DAY)/puzzle_$(PUZZLE)/solver.py
+
+.PHONY: test-puzzle
+test-puzzle: ## Run tests for a specific puzzle (Usage: make test-puzzle DAY=XX PUZZLE=Y)
+	@if [ -z "$(DAY)" ]; then \
+		echo "❌ Error: DAY parameter is required"; \
+		echo "Usage: make test-puzzle DAY=XX PUZZLE=Y"; \
+		exit 1; \
+	fi
+	@if [ -z "$(PUZZLE)" ]; then \
+		echo "❌ Error: PUZZLE parameter is required"; \
+		echo "Usage: make test-puzzle DAY=XX PUZZLE=Y"; \
+		exit 1; \
+	fi
+	@if [ ! -d "aoc/day_$(DAY)" ]; then \
+		echo "❌ Error: Directory aoc/day_$(DAY) does not exist"; \
+		exit 1; \
+	fi
+	@if [ ! -f "aoc/day_$(DAY)/tests/test_day_$(DAY)_puzzle_$(PUZZLE).py" ]; then \
+		echo "❌ Error: Test file for puzzle $(PUZZLE) not found for day $(DAY)"; \
+		exit 1; \
+	fi
+	@echo "🧪 Running tests for Day $(DAY) - Puzzle $(PUZZLE)..."
+	@uv run pytest aoc/day_$(DAY)/tests/test_day_$(DAY)_puzzle_$(PUZZLE).py -vv
+
 # Version management
 .PHONY: bump
 bump: ## Bump version, update changelog, and create git tag (BUMP=PATCH|MINOR|MAJOR)

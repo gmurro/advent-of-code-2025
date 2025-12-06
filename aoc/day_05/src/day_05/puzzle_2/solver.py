@@ -47,7 +47,7 @@ def solve(fresh_ingredient_ranges: list[range]) -> int:
 def main():
     fresh_ingredient_ranges, _ = load_input()
     result = solve(fresh_ingredient_ranges)
-    print(f"🎄📆 Day 04 - Puzzle 2 📆🎄\n✅ Solution:\n{result}")
+    print(f"🎄📆 Day 05 - Puzzle 2 📆🎄\n✅ Solution:\n{result}")
 
 
 if __name__ == "__main__":

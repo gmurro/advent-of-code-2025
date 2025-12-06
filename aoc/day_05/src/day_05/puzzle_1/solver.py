@@ -24,7 +24,7 @@ def solve(fresh_ingredient_ranges: list[range], ingredient_ids: list[int]) -> in
 def main():
     fresh_ingredient_ranges, ingredient_ids = load_input()
     result = solve(fresh_ingredient_ranges, ingredient_ids)
-    print(f"🎄📆 Day 04 - Puzzle 1 📆🎄\n✅ Solution:\n{result}")
+    print(f"🎄📆 Day 05 - Puzzle 1 📆🎄\n✅ Solution:\n{result}")
 
 
 if __name__ == "__main__":

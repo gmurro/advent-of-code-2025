@@ -14,7 +14,7 @@ python-preference = "only-system"
 default-groups = ["dev"]
 
 [project.scripts]
-day-03 = "day_05.puzzle_1.solver:main"
+day-05 = "day_05.puzzle_1.solver:main"
 
 [build-system]
 requires = ["hatchling"]
