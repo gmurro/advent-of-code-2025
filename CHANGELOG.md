@@ -1,3 +1,10 @@
+## v0.6.0 (2025-12-07)
+
+### Feat
+
+- **day_06**: Add solutions for Day 06 puzzles with input parsing and utility functions
+- Implement `make run` and `make test-puzzle` commands in Makefile with input validation
+
 ## v0.5.0 (2025-12-06)
 
 ### Feat
