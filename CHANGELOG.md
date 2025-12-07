@@ -1,3 +1,9 @@
+## v0.7.0 (2025-12-07)
+
+### Feat
+
+- **day_07**: Add solutions for Day 07 puzzles, including input handling and solver logic
+
 ## v0.6.0 (2025-12-07)
 
 ### Feat
