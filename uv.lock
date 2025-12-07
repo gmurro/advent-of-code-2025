@@ -15,6 +15,7 @@ members = [
     "day-04",
     "day-05",
     "day-06",
+    "day-07",
 ]
 
 [[package]]
@@ -300,6 +301,29 @@ dev = [
 
 [package.metadata]
 requires-dist = [{ name = "numpy", specifier = ">=2.3.5" }]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "mypy", specifier = "~=1.18.2" },
+    { name = "pre-commit", specifier = "~=4.4.0" },
+    { name = "pytest", specifier = "~=9.0.0" },
+    { name = "ruff", specifier = "~=0.14.4" },
+]
+
+[[package]]
+name = "day-07"
+version = "0.1.0"
+source = { editable = "aoc/day_07" }
+
+[package.dev-dependencies]
+dev = [
+    { name = "mypy" },
+    { name = "pre-commit" },
+    { name = "pytest" },
+    { name = "ruff" },
+]
+
+[package.metadata]
 
 [package.metadata.requires-dev]
 dev = [
